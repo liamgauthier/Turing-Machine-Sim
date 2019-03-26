@@ -1090,3 +1090,33 @@ i|finish
 j|finish
 0|<|finish
 
+ |add0
+j|>|iterateRight
+
+ |add1
+a|>|iterateRight
+
+ |add2
+b|>|iterateRight
+
+ |add3
+c|>|iterateRight
+
+ |add4
+d|>|iterateRight
+
+ |add5
+e|>|iterateRight
+
+ |add6
+f|>|iterateRight
+
+ |add7
+g|>|iterateRight
+
+ |add8
+h|>|iterateRight
+
+ |add9
+i|>|iterateRight
+

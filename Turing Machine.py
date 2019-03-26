@@ -74,7 +74,8 @@ class instruction(object):
         #as the numerical change of the tapes observed index
     
     def __str__(self):
-        return self.newCharacter + "|" + str(self.move) + "|" + self.newState
+        return (self.newCharacter + "|" + {1:">", 0: "_", -1: "<"}[self.move] +\
+    "|" + self.newState)
     def __eq__(self, other):
         return str(self) == str(other)
 
@@ -256,7 +257,7 @@ class program(object):
 def callProgram(fileName):
     """
     Initializes a program object from the program written in fileName.  See 'README.txt'
-    for instructions on how to write a program in a .txt file
+    for instructions on how to write a Turing Machine program in a .txt file
     """
     stringToCondition = lambda string: condition(string[0], string[2:-1])
     stringToInstruction = lambda string: instruction(string[0], string[4:-1], string[2])
