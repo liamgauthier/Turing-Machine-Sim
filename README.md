@@ -1,3 +1,5 @@
+This is my first project excluding course work, daily coding challenges, and the like.  I would appreciate any feedback you can provide.
+
 # Turing-Machine-Sim
 This software simulates a Turing Machine in your python console.  A turing machine is a machine that uses Alan Turing's six primitives to
 perform calculations on a tape of theoreticaly infinite length.  A Turing Machine program is comprized of lines which check the tape's
