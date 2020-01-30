@@ -36,6 +36,9 @@ forgeting the caridge return after last instruction will cause the machine to ig
 the program.  This program imported into the console using the callProgram(fileName) function.
 
 e.g. copy the following code into your console:
+
 calculator = callprogram("Add.txt")
+
 equation = tape("iterateRight", "12+34")#the two intergers in the second string can be replaced with any other positive intergers. Try it!
+
 calculator.run(equation)
