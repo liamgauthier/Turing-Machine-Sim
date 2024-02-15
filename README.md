@@ -1,6 +1,6 @@
 # Turing Machine Simulator
 
-This is an independent project I worked on in high school. It is my first project as an aspiring programmer. This python script contains the classes required to simulate a turing machine in your own projects.
+This is an independent project I worked on in high school. It is my first project as an aspiring programmer. This Python script contains the classes required to simulate a turing machine in your own projects.
 
 ## What is a Turing Machine?
 
@@ -27,7 +27,7 @@ See [here](https://en.wikipedia.org/wiki/Turing_machine) for more information.
 
 ### Import Classes
 
-Since this is not a python library, you will need to put Turing_Machine.py into the same directory as any python script in which you want to use these classes so you can import the turing machine classes. you can import them with:
+Since this is not a Python library, you will need to put Turing_Machine.py into the same directory as any Python script in which you want to use these classes so you can import the turing machine classes. you can import them with:
 
 ```
 import Turing_Machine as tm
