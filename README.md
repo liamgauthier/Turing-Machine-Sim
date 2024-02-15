@@ -4,7 +4,7 @@ This is an independent project I worked on in high school. It is my first projec
 
 ## What is a Turing Machine?
 
-A turing machine is a theoretical machine that can perform any algorithm using only Alan Turing's six primitive methods. The six primitives are:
+A Turing machine is a theoretical machine that can perform any algorithm using only Alan Turing's six primitive methods. The six primitives are:
 
 1. Move one position left in memory
 2. Move one position right in memory
@@ -15,9 +15,9 @@ A turing machine is a theoretical machine that can perform any algorithm using o
 
 The theoretical machine described by Turing has a "tape" of infinite length which is a one-dimensional array of characters that acts as the machine's memory and display simultaneously. Additionally, the machine has a "reader" which can scan the character at the current position along the tape, write a new character to that position (erasing the character that was previously there), and move its position left or right. Finally, the machine has an internal "state" which tells it what set of instructions to follow.
 
-When you execute a program on a turing machine, it loops through the following steps until the program halts. The machine scans the character at the current position of the tape and then the program uses the result of the scan operation and the machine's current state to fetch the instruction it will follow. If the instruction is not halt, then it writes a character to the tape at the current position, moves the tape left or right, and changes the state of the machine in accordance with that instruction.
+When you execute a program on a Turing machine, it loops through the following steps until the program halts. The machine scans the character at the current position of the tape and then the program uses the result of the scan operation and the machine's current state to fetch the instruction it will follow. If the instruction is not halt, then it writes a character to the tape at the current position, moves the tape left or right, and changes the state of the machine in accordance with that instruction.
 
-One can think of a turing machine program as a mapping from (state, scanned character) pairs to (character to write, new state, move direction) triples where the move direction is "halt" for the instruction that is fetched once the program has finished.
+One can think of a Turing machine program as a mapping from (state, scanned character) pairs to (character to write, new state, move direction) triples where the move direction is "halt" for the instruction that is fetched once the program has finished.
 
 See [here](https://en.wikipedia.org/wiki/Turing_machine) for more information.
 
@@ -27,7 +27,7 @@ See [here](https://en.wikipedia.org/wiki/Turing_machine) for more information.
 
 ### Import Classes
 
-Since this is not a Python library, you will need to put Turing_Machine.py into the same directory as any Python script in which you want to use these classes so you can import the turing machine classes. You can import them with:
+Since this is not a Python library, you will need to put Turing_Machine.py into the same directory as any Python script in which you want to use these classes so you can import the Turing machine classes. You can import them with:
 
 ```
 import Turing_Machine as tm
@@ -45,9 +45,9 @@ my_turing_machine_program = tm.program(description="A program using Turing_Machi
 
 Next, we will add `condition`->`instruction` mappings to the program. First, we will create a `condition`, then we will create an `instruction`. Finally, we will add the mapping to the program with the `program.addLine()` method.
 
-A `condition` has two arguments, `character` and `state`. `character` is a string with length 1 which the turing machine could read off the tape. `state` is a string representing a potential state of the machine.
+A `condition` has two arguments, `character` and `state`. `character` is a string with length 1 which the Turing machine could read off the tape. `state` is a string representing a potential state of the machine.
 
-An `instruction` has three arguments, `newCharacter`, `newState`, and `move`. `newCharacter` is a string with length 1 which the turing machine will write to the tape. If `newCharacter` is "*", then a new character will not be written to the tape and the previous character will not be erased. `newState` is a string which the state of the turing machine will be changed to. `move` is a string of length 1, taking values of "<", "\_", or ">". "<" causes the reader to move 1 spot to the left in memory, ">" causes the reader to move one spot right in memory, and "\_" causes the program to halt.
+An `instruction` has three arguments, `newCharacter`, `newState`, and `move`. `newCharacter` is a string with length 1 which the Turing machine will write to the tape. If `newCharacter` is "*", then a new character will not be written to the tape and the previous character will not be erased. `newState` is a string which the state of the Turing machine will be changed to. `move` is a string of length 1, taking values of "<", "\_", or ">". "<" causes the reader to move 1 spot to the left in memory, ">" causes the reader to move one spot right in memory, and "\_" causes the program to halt.
 
 The `program.addLine()` method takes two arguments, the first one is a condition and the second is an instruction.
 
@@ -77,7 +77,7 @@ print(my_turing_machine_program.run(hello_word_tape))
 
 ## Tutorial
 
-Let's make a script that simulates a turing machine program which, given a tape containing a binary number with the index at the least significant digit and the initial state being "initial_state", will erase each digit and write "e" if the number is even and "o" if the number is odd. This is quite simple for us to determine since a binary number is even if and only if its last digit is 0.
+Let's make a script that simulates a Turing machine program which, given a tape containing a binary number with the index at the least significant digit and the initial state being "initial_state", will erase each digit and write "e" if the number is even and "o" if the number is odd. This is quite simple for us to determine since a binary number is even if and only if its last digit is 0.
 
 The first step is to import `Turing_Machine.py` into our main script and initialize our program object.
 
