@@ -27,13 +27,13 @@ See [here](https://en.wikipedia.org/wiki/Turing_machine) for more information.
 
 ### Import Classes
 
-Since this is not a Python library, you will need to put Turing_Machine.py into the same directory as any Python script in which you want to use these classes so you can import the turing machine classes. you can import them with:
+Since this is not a Python library, you will need to put Turing_Machine.py into the same directory as any Python script in which you want to use these classes so you can import the turing machine classes. You can import them with:
 
 ```
 import Turing_Machine as tm
 ```
 
-The general workflow with these classes will be to initialize a `program`, add `codition`->`instruction` mappings to the `program`, initialize a `tape` with initial memory and an initial state, then run the `program` using the `run` method or the `controlled_run` method with a `tape` as the argument.
+The general workflow with these classes will be to initialize a `program`, add `condition`->`instruction` mappings to the `program`, initialize a `tape` with initial memory and an initial state, then run the `program` using the `run` method or the `controlled_run` method with a `tape` as the argument.
 
 ### Create a Program
 
@@ -45,7 +45,7 @@ my_turing_machine_program = tm.program(description="A program using Turing_Machi
 
 Next, we will add `condition`->`instruction` mappings to the program. First, we will create a `condition`, then we will create an `instruction`. Finally, we will add the mapping to the program with the `program.addLine()` method.
 
-A `condition` has two arguments, `character` and `state`. `character` is a string with length 1 which the turing machine could read off the tape. `state` is a string representing potential state of the machine.
+A `condition` has two arguments, `character` and `state`. `character` is a string with length 1 which the turing machine could read off the tape. `state` is a string representing a potential state of the machine.
 
 An `instruction` has three arguments, `newCharacter`, `newState`, and `move`. `newCharacter` is a string with length 1 which the turing machine will write to the tape. If `newCharacter` is "*", then a new character will not be written to the tape and the previous character will not be erased. `newState` is a string which the state of the turing machine will be changed to. `move` is a string of length 1, taking values of "<", "\_", or ">". "<" causes the reader to move 1 spot to the left in memory, ">" causes the reader to move one spot right in memory, and "\_" causes the program to halt.
 
@@ -67,7 +67,7 @@ hello_world_tape = tm.tape(state="check first letter", cells="hello, World!", in
 
 ### Run a Program
 
-Once you have initialized a program and a tape, there are two ways to run the program. You can use the `program.run()` method or the `program.controlled_run()` method. `run()` takes a `tape` as an argument and runs until the process halts. `controlled_run()` has three arguments, `tape`, `time`, and `timeType`. `tape` is the `tape` object you want to execute the program on. `time` is the length of time, in units of `timeType`, that the program will run for before being pre-emptively halted. `timeType` takes one of "h", "m", "s", "ms", or "u" where "h" means units of hours, "m" means units of minutes, "s" means units of seconds, "ms" means units of milliseconds, and "u" is a number of times an instruction will be applied to the `tape`. `controlled_run()` is preferable while debugging if you are unsure that your program will halt. However, It adds extra time complexity, so if you know your program will halt then `run()` is better.
+Once you have initialized a program and a tape, there are two ways to run the program. You can use the `program.run()` method or the `program.controlled_run()` method. `run()` takes a `tape` as an argument and runs until the process halts. `controlled_run()` has three arguments, `tape`, `time`, and `timeType`. `tape` is the `tape` object you want to execute the program on. `time` is the length of time, in units of `timeType`, that the program will run for before being pre-emptively halted. `timeType` takes one of "h", "m", "s", "ms", or "u" where "h" means units of hours, "m" means units of minutes, "s" means units of seconds, "ms" means units of milliseconds, and "u" is a number of times an instruction will be applied to the `tape`. `controlled_run()` is preferable while debugging if you are unsure that your program will halt. However, it adds extra time complexity, so if you know your program will halt then `run()` is better.
 
 ```
 print(my_turing_machine_program.run(hello_word_tape))
@@ -79,7 +79,7 @@ print(my_turing_machine_program.run(hello_word_tape))
 
 Let's make a script that simulates a turing machine program which, given a tape containing a binary number with the index at the least significant digit and the initial state being "initial_state", will erase each digit and write "e" if the number is even and "o" if the number is odd. This is quite simple for us to determine since a binary number is even if and only if its last digit is 0.
 
-The first step is to import `Turing_Machine.py` into our main script. and initialize our program object.
+The first step is to import `Turing_Machine.py` into our main script and initialize our program object.
 
 ```
 # main.py
@@ -183,7 +183,7 @@ write "o" to an empty tape
 
 ### How to compile a program.txt
 
-A program.txt is compiled using the `compileProgram()` function. This function takes the file's relative path as a string as the argument and the function returns a `program` with all the mappings from the text file. For example, you can run the program compiled from the provided "Add.txt" with the following code:
+A program.txt is compiled using the `compileProgram()` function. This function takes the file's relative path as a string for its argument and the function returns a `program` with all the mappings from the text file. For example, you can run the program compiled from the provided "Add.txt" with the following code:
 
 ```
 import Turing_Machine as tm
