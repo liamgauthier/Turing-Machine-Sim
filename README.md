@@ -148,7 +148,7 @@ print(even_or_odd.run(num3))
 
 Turing_Machine.py includes a function, `compileProgram()` which converts a text file into a `program` object with all `condition`->`instruction` mappings that were described in the text file.
 
-### How to right a program.txt
+### How to Write a program.txt
 
 Each mapping uses 3 lines in the text file. The first line contains the arguments for a condition, the second contains the arguments for the instruction the condition is mapped to, and the third is ignored by the function and can be used for commenting.
 
